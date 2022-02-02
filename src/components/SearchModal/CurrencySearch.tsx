@@ -62,7 +62,7 @@ export function CurrencySearch({
 
   const showETH: boolean = useMemo(() => {
     const s = searchQuery.toLowerCase().trim()
-    return s === '' || s === 'e' || s === 'et' || s === 'eth'
+    return s === '' || s === 'm' || s === 'ma' || s === 'mat' || s === 'mati' || s === 'matic'
   }, [searchQuery])
 
   const tokenComparator = useTokenComparator(invertSearchOrder)
@@ -159,6 +159,7 @@ export function CurrencySearch({
           type="text"
           id="token-search-input"
           placeholder={t('tokenSearchPlaceholder')}
+          autoComplete='off'
           value={searchQuery}
           ref={inputRef as RefObject<HTMLInputElement>}
           onChange={handleInput}
